@@ -97,11 +97,10 @@ input {
 </head>
 <body>
   <h1 class="register-title">Welcome</h1>
-  <form class="register" action="signup.html" method="post">
-    <input type="text" name="name" class="register-input" placeholder="Name">
+  <form class="register" action="signin.html">
     <input type="text" name="gname" class="register-input" placeholder="Game Name">
     <input type="password" name="password" class="register-input" placeholder="Password">
-    <input type="submit" value="Create Account" class="register-button">
+    <input type="submit" value="Play" class="register-button">
   </form>
 </body>
 </html>
