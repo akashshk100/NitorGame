@@ -98,9 +98,9 @@ input {
 <body>
   <h1 class="register-title">Welcome</h1>
   <form class="register">
-    <input type="text" class="register-input" placeholder="Name">
-    <input type="text" class="register-input" placeholder="Game Name">
-    <input type="password" class="register-input" placeholder="Password">
+    <input type="text" name="name" class="register-input" placeholder="Name">
+    <input type="text" name="gname" class="register-input" placeholder="Game Name">
+    <input type="password" name="password" class="register-input" placeholder="Password">
     <input type="submit" value="Create Account" class="register-button">
   </form>
 </body>
