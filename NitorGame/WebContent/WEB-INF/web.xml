@@ -13,4 +13,14 @@
       <servlet-name>SignUpController</servlet-name>
       <url-pattern>/signup.html</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+      <servlet-name>SignInController</servlet-name>
+      <servlet-class>controller.SignInController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+      <servlet-name>SignInController</servlet-name>
+      <url-pattern>/signin.html</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

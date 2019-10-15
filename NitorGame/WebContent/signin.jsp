@@ -96,8 +96,8 @@ input {
   </style>
 </head>
 <body>
-  <h1 class="register-title">Welcome</h1>
-  <form class="register" action="signin.html">
+  <h1 class="register-title">CodeNinja</h1>
+  <form class="register" action="signin.html" method="post">
     <input type="text" name="gname" class="register-input" placeholder="Game Name">
     <input type="password" name="password" class="register-input" placeholder="Password">
     <input type="submit" value="Play" class="register-button">

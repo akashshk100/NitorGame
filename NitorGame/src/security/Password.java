@@ -1,6 +1,7 @@
 package security;
+import dao.DBConnection;
 import random.RandomGenerator;
-
+import java.sql.*;
 public class Password {
 
 	public String encrypt(String password){
@@ -69,5 +70,24 @@ public class Password {
 		}
 		
 		return new String(decrypted_password);
+	}
+	
+	public boolean verifyPassword(String gname,String password) {
+		Statement st;
+		try {
+			st = DBConnection.getConnection().createStatement();
+			String psw2=null;
+			ResultSet rs = st.executeQuery("select password from user where gname = '"+gname+"'");
+	        if(rs.next()){
+	                psw2 = decrypt(rs.getString(1)); 
+	        }         
+	        if(password.equals(psw2)){
+	           return true;     
+	        }
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+        return false;
 	}
 }

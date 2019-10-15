@@ -11,7 +11,23 @@
   font: 14px/20px 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #404040;
   background: #2d4259;
-}
+	}
+	
+	a:link {
+	  color: gray;
+	  background-color: transparent;
+	  text-decoration: none;
+	}
+	a:visited {
+	  color: gray;
+	  background-color: transparent;
+	  text-decoration: none;
+	}
+	a:hover {
+	  color: gray;
+	  background-color: transparent;
+	  text-decoration: underline;
+	}
 
 .register-title {
   width: 270px;
@@ -96,12 +112,13 @@ input {
   </style>
 </head>
 <body>
-  <h1 class="register-title">Welcome</h1>
+  <h1 class="register-title">CodeNinja</h1>
   <form class="register" action="signup.html" method="post">
     <input type="text" name="name" class="register-input" placeholder="Name">
     <input type="text" name="gname" class="register-input" placeholder="Game Name">
     <input type="password" name="password" class="register-input" placeholder="Password">
     <input type="submit" value="Create Account" class="register-button">
+    <a href="signin.jsp"><p style="text-align:center">Already a player</p></a>
   </form>
 </body>
 </html>
