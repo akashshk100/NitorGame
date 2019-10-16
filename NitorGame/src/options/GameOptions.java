@@ -16,15 +16,14 @@ public class GameOptions {
 	}
 	
 	public boolean verifyAns(int n,String ans){
-		/*try{
+		try{
 			Statement st=DBConnection.getConnection().createStatement();
-			ResultSet rs=st.executeQuery("select ans from hint where h_id="+n);
+			ResultSet rs=st.executeQuery("select ans from QnA where q_id="+n);
 			if(rs.next()){
 				if(ans.equals(rs.getString(1)))
 					return true;
 			}
 		}catch(Exception e){System.out.println(e);}
-		return false;*/
-		return true;
+		return false;
 	}
 }

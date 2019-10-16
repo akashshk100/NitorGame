@@ -18,15 +18,14 @@ public class RandomGenerator {
 	}
 	
 	public int[] rand_array(){
-		int[] random_array=new int[15];
+		int[] random_array=new int[12];
 		int i=0,n;
-		for(i=0;i<15;i++){random_array[i]=-1;}
+		for(i=0;i<12;i++){random_array[i]=-1;}
 		i=0;
-		while(i<15){
-			n=rand_number(1,15);
+		while(i<12){
+			n=rand_number(1,12);
 			if(!present(n,random_array)){
 				random_array[i]=n;
-				System.out.println(n);
 				i++;
 			}
 		}

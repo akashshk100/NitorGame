@@ -1,3 +1,5 @@
+<%@ page import="java.sql.*"%>
+<%@ page import="dao.DBConnection"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -12,7 +14,9 @@
   color: #404040;
   background: #2d4259;
 	}
-	
+	.white-space-pre{
+		white-space: pre-wrap;
+	}
 	a:link {
 	  color: gray;
 	  background-color: transparent;
@@ -50,7 +54,7 @@
 
 .register {
   margin: 0 auto;
-  width: 230px;
+  width: 1000px;
   padding: 20px;
   background: #f4f4f4;
   border-radius: 3px;
@@ -121,18 +125,28 @@ input {
 	if(curr_que_num==prev_que_num){
 		int []que_seq=(int[])session.getAttribute("que_seq");
 		int level=(int)session.getAttribute("level");
-		que_num=que_seq[level-1];
+		que_num=4*(que_seq[level-1]-1)+1;
+		session.setAttribute("curr_que_num",que_num);
+		session.setAttribute("prev_que_num",que_num);
 	}
 	else{
 		prev_que_num=curr_que_num;
 		session.setAttribute("prev_que_num",prev_que_num);
 		que_num=curr_que_num;
 	}
+	String que=null;
+	String domain=null;
+	Statement st=DBConnection.getConnection().createStatement();
+	ResultSet rs=st.executeQuery("select que,domain from QnA where q_id="+que_num);
+	if(rs.next()){
+		que=rs.getString(1);
+		domain=rs.getString(2);
+	}
 	%>
 
-  <h1 class="register-title">CodeNinja</h1>
+  <h1 class="register-title"><%=domain %></h1>
   <form class="register" action="verifyAns.html" method="post">
-  	<p><%=que_num %></p>
+  	<div class="white-space-pre"><%=que %></div>
     <input type="text" name="ans" class="register-input" placeholder="Your Answer">
     <input type="submit" value="Submit" class="register-button">
   </form>
