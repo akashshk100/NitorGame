@@ -11,11 +11,24 @@
   font: 14px/20px 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #404040;
   background: #2d4259;
-}
-.err_msg{
-	text-align: center;
-	color: red;
-}
+	}
+	
+	a:link {
+	  color: gray;
+	  background-color: transparent;
+	  text-decoration: none;
+	}
+	a:visited {
+	  color: gray;
+	  background-color: transparent;
+	  text-decoration: none;
+	}
+	a:hover {
+	  color: gray;
+	  background-color: transparent;
+	  text-decoration: underline;
+	}
+
 .register-title {
   width: 270px;
   line-height: 43px;
@@ -99,19 +112,29 @@ input {
   </style>
 </head>
 <body>
+
+	<%
+	int que_num=0;
+	int curr_que_num=(int)session.getAttribute("curr_que_num");
+	int prev_que_num=(int)session.getAttribute("prev_que_num");
+	
+	if(curr_que_num==prev_que_num){
+		int []que_seq=(int[])session.getAttribute("que_seq");
+		int level=(int)session.getAttribute("level");
+		que_num=que_seq[level-1];
+	}
+	else{
+		prev_que_num=curr_que_num;
+		session.setAttribute("prev_que_num",prev_que_num);
+		que_num=curr_que_num;
+	}
+	%>
+
   <h1 class="register-title">CodeNinja</h1>
-  <form class="register" action="signin.html" method="post">
-    <input type="text" name="gname" class="register-input" placeholder="Game Name">
-    <input type="password" name="password" class="register-input" placeholder="Password">
-    <input type="submit" value="Play" class="register-button">
-    <%
-    try{
-    if(session.getAttribute("err_msg")!=null){
-    %>
-    <p class="err_msg" style="text-align:center">Invalid Credentials!</p>
-    <%}
-    }catch(Exception e){System.out.println(e);}
-    %>
+  <form class="register" action="verifyAns.html" method="post">
+  	<p><%=que_num %></p>
+    <input type="text" name="ans" class="register-input" placeholder="Your Answer">
+    <input type="submit" value="Submit" class="register-button">
   </form>
 </body>
 </html>

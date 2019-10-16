@@ -23,4 +23,13 @@
       <url-pattern>/signin.html</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+      <servlet-name>VerifyAnsController</servlet-name>
+      <servlet-class>controller.VerifyAnsController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+      <servlet-name>VerifyAnsController</servlet-name>
+      <url-pattern>/verifyAns.html</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

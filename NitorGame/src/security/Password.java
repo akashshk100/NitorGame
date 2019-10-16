@@ -77,7 +77,7 @@ public class Password {
 		try {
 			st = DBConnection.getConnection().createStatement();
 			String psw2=null;
-			ResultSet rs = st.executeQuery("select password from user where gname = '"+gname+"'");
+			ResultSet rs = st.executeQuery("select password from user where gname='"+gname+"'");
 	        if(rs.next()){
 	                psw2 = decrypt(rs.getString(1)); 
 	        }         
