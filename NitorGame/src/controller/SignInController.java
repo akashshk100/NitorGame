@@ -43,6 +43,7 @@ public class SignInController extends HttpServlet {
 			s.setAttribute("score", 0);
 			s.setAttribute("prev_que_num", 0);
 			s.setAttribute("curr_que_num", 0);
+			s.setAttribute("dmn_cnt", 1);
 			response.sendRedirect("gamepage.jsp");
 		}
 		else {

@@ -16,6 +16,7 @@ public class VerifyAnsController extends HttpServlet{
 		String ans=request.getParameter("ans");
 		int curr_que_num=(int) request.getSession().getAttribute("curr_que_num");
 		int level=(int) request.getSession().getAttribute("level");
+		int dmn_cnt=(int) request.getSession().getAttribute("dmn_cnt");
 		if(go.verifyAns(curr_que_num, ans)) {
 			level++;
 			request.getSession().setAttribute("level",level);
@@ -23,7 +24,9 @@ public class VerifyAnsController extends HttpServlet{
 		}
 		else {
 			curr_que_num++;
+			dmn_cnt++;
 			request.getSession().setAttribute("curr_que_num",curr_que_num);
+			request.getSession().setAttribute("dmn_cnt",dmn_cnt);
 			response.sendRedirect("gamepage.jsp");
 		}
 	}

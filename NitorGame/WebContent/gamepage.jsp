@@ -17,21 +17,7 @@
 	.white-space-pre{
 		white-space: pre-wrap;
 	}
-	a:link {
-	  color: gray;
-	  background-color: transparent;
-	  text-decoration: none;
-	}
-	a:visited {
-	  color: gray;
-	  background-color: transparent;
-	  text-decoration: none;
-	}
-	a:hover {
-	  color: gray;
-	  background-color: transparent;
-	  text-decoration: underline;
-	}
+
 
 .register-title {
   width: 270px;
@@ -121,7 +107,7 @@ input {
 	int que_num=0;
 	int curr_que_num=(int)session.getAttribute("curr_que_num");
 	int prev_que_num=(int)session.getAttribute("prev_que_num");
-	
+	int dmn_cnt=(int)session.getAttribute("dmn_cnt");
 	if(curr_que_num==prev_que_num){
 		int []que_seq=(int[])session.getAttribute("que_seq");
 		int level=(int)session.getAttribute("level");
@@ -134,21 +120,31 @@ input {
 		session.setAttribute("prev_que_num",prev_que_num);
 		que_num=curr_que_num;
 	}
-	String que=null;
-	String domain=null;
-	Statement st=DBConnection.getConnection().createStatement();
-	ResultSet rs=st.executeQuery("select que,domain from QnA where q_id="+que_num);
-	if(rs.next()){
-		que=rs.getString(1);
-		domain=rs.getString(2);
+	
+	if(dmn_cnt==4){%>
+	<h1 class="register-title">Game Over...</h1>
+	<br>
+	<input type="button" value="New Game" onclick="Good Luck">
+	<%
 	}
+	else{
+		String que=null;
+		String domain=null;
+		Statement st=DBConnection.getConnection().createStatement();
+		ResultSet rs=st.executeQuery("select que,domain from QnA where q_id="+que_num);
+		if(rs.next()){
+			que=rs.getString(1);
+			domain=rs.getString(2);
+		}
+		System.out.println(dmn_cnt);
 	%>
-
+	
   <h1 class="register-title"><%=domain %></h1>
   <form class="register" action="verifyAns.html" method="post">
   	<div class="white-space-pre"><%=que %></div>
     <input type="text" name="ans" class="register-input" placeholder="Your Answer">
     <input type="submit" value="Submit" class="register-button">
   </form>
+  <%}%>
 </body>
 </html>
