@@ -39,12 +39,11 @@ public class SignInController extends HttpServlet {
 			int []que_seq=rg.rand_array();
 			s.setAttribute("que_seq", que_seq);
 			s.setAttribute("level", 1);
-			s.setAttribute("hint",0);
 			s.setAttribute("score", 0);
 			s.setAttribute("prev_que_num", 0);
 			s.setAttribute("curr_que_num", 0);
 			s.setAttribute("dmn_cnt", 1);
-			response.sendRedirect("gamepage.jsp");
+			response.sendRedirect("StartingInstructions.jsp");
 		}
 		else {
 			response.sendRedirect("signin.jsp");

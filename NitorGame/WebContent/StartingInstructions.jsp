@@ -15,23 +15,23 @@
 	}
 	
 	a:link {
-	  color: gray;
+	  color: white;
 	  background-color: transparent;
 	  text-decoration: none;
 	}
 	a:visited {
-	  color: gray;
+	  color: white;
 	  background-color: transparent;
 	  text-decoration: none;
 	}
 	a:hover {
-	  color: gray;
+	  color: white;
 	  background-color: transparent;
 	  text-decoration: underline;
 	}
 
 .register-title {
-  width: 270px;
+  width: 500px;
   line-height: 43px;
   margin: 50px auto 20px;
   font-size: 19px;
@@ -51,7 +51,7 @@
 
 .register {
   margin: 0 auto;
-  width: 230px;
+  width: 1000px;
   padding: 20px;
   background: #f4f4f4;
   border-radius: 3px;
@@ -113,13 +113,22 @@ input {
   </style>
 </head>
 <body>
-  <h1 class="register-title">CodeNinja</h1>
-  <form class="register" action="signup.html" method="post">
-    <input type="text" name="name" class="register-input" placeholder="Name">
-    <input type="text" name="gname" class="register-input" placeholder="Game Name">
-    <input type="password" name="password" class="register-input" placeholder="Password">
-    <input type="submit" value="Create Account" class="register-button">
-    <a href="signin.jsp"><p style="text-align:center">Already a player</p></a>
+	<%
+	String inst1="1. There 12 level of this game, each containing nail biting problems on different domain of computer science. You will have solve those problems along the way to reach the final destination.";
+	String inst2="2. To complete a particular domain you'll get 4 attempt at most, for every attempt you'll have to solve differrent but easier problem of that domain";
+	String inst3="3. For every right answer of a particular domain you'll a +5 points if you answer it in first attempt.";
+	String inst4="4. For every right answer in second attempt you'll get +3, in third attempt you'll get +2, and in fourth and last attempt you'll +1";
+	String inst5="5. If you didn't complete a particular domain in maximum 4 attempt you'll be disqualified there itself.";
+	%>
+	<h1 class="register-title">Instructions</h1>
+  <form class="register">
+  <br><br>
+  	<div class="white-space-pre"><%=inst1 %></div><br>
+  	<div class="white-space-pre"><%=inst2 %></div><br>
+  	<div class="white-space-pre"><%=inst3 %></div><br>
+  	<div class="white-space-pre"><%=inst4 %></div><br>
+  	<div class="white-space-pre"><%=inst5 %></div><br><br>
+    <a href="gamepage.jsp"><input type="button" value="Continue" class="register-button"></a>
   </form>
 </body>
 </html>

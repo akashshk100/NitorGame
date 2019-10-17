@@ -12,12 +12,28 @@
   	body {
   font: 14px/20px 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #404040;
-  background: #2d4259;
+  background-image: url('6-min_resize_md.png');
+  background-color: #2d4259;
 	}
 	.white-space-pre{
 		white-space: pre-wrap;
 	}
 
+	a:link {
+	  color: white;
+	  background-color: transparent;
+	  text-decoration: none;
+	}
+	a:visited {
+	  color: white;
+	  background-color: transparent;
+	  text-decoration: none;
+	}
+	a:hover {
+	  color: white;
+	  background-color: transparent;
+	  text-decoration: underline;
+	}
 
 .register-title {
   width: 270px;
@@ -111,21 +127,22 @@ input {
 	if(curr_que_num==prev_que_num){
 		int []que_seq=(int[])session.getAttribute("que_seq");
 		int level=(int)session.getAttribute("level");
+		if(level==13){
+			response.sendRedirect("complete.jsp");
+		}
+		else{
 		que_num=4*(que_seq[level-1]-1)+1;
 		session.setAttribute("curr_que_num",que_num);
 		session.setAttribute("prev_que_num",que_num);
+		}
 	}
 	else{
 		prev_que_num=curr_que_num;
 		session.setAttribute("prev_que_num",prev_que_num);
 		que_num=curr_que_num;
 	}
-	
-	if(dmn_cnt==4){%>
-	<h1 class="register-title">Game Over...</h1>
-	<br>
-	<input type="button" value="New Game" onclick="Good Luck">
-	<%
+	if(dmn_cnt==5){
+		response.sendRedirect("incomplete.jsp");
 	}
 	else{
 		String que=null;
@@ -136,7 +153,6 @@ input {
 			que=rs.getString(1);
 			domain=rs.getString(2);
 		}
-		System.out.println(dmn_cnt);
 	%>
 	
   <h1 class="register-title"><%=domain %></h1>

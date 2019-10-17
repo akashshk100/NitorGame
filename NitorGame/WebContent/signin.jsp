@@ -10,7 +10,8 @@
   	body {
   font: 14px/20px 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #404040;
-  background: #2d4259;
+  background-image: url('6-min_resize_md.png');
+  background-color: #2d4259;
 }
 .err_msg{
 	text-align: center;
