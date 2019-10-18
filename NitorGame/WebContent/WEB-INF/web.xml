@@ -32,4 +32,13 @@
       <url-pattern>/verifyAns.html</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+      <servlet-name>VerifyRetryAnsController</servlet-name>
+      <servlet-class>controller.VerifyRetryAnsController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+      <servlet-name>VerifyRetryAnsController</servlet-name>
+      <url-pattern>/VerifyRetryAns.html</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

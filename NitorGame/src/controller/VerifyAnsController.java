@@ -1,6 +1,7 @@
 package controller;
 import java.io.*;
 
+
 import javax.servlet.http.*;
 
 import options.GameOptions;
@@ -21,8 +22,6 @@ public class VerifyAnsController extends HttpServlet{
 		if(go.verifyAns(curr_que_num, ans)) {
 			level++;
 			request.getSession().setAttribute("level",level);
-			dmn_cnt=1;
-			request.getSession().setAttribute("dmn_cnt",dmn_cnt);
 			if(dmn_cnt==1) {
 				score+=5;
 				request.getSession().setAttribute("score",score);
@@ -39,6 +38,8 @@ public class VerifyAnsController extends HttpServlet{
 				score+=1;
 				request.getSession().setAttribute("score",score);
 			}
+			dmn_cnt=1;
+			request.getSession().setAttribute("dmn_cnt",dmn_cnt);
 			response.sendRedirect("gamepage.jsp");
 		}
 		else {
