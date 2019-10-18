@@ -20,7 +20,7 @@ public class VerifyAnsController extends HttpServlet{
 		int dmn_cnt=(int) request.getSession().getAttribute("dmn_cnt");
 		int score=(int) request.getSession().getAttribute("score");
 		if(go.verifyAns(curr_que_num, ans)) {
-			level++;
+			level+=1;
 			request.getSession().setAttribute("level",level);
 			if(dmn_cnt==1) {
 				score+=5;
