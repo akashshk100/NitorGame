@@ -32,4 +32,13 @@
       <url-pattern>/verifyAns.html</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+      <servlet-name>SignInRouter</servlet-name>
+      <servlet-class>router.SignInRouter</servlet-class>
+  </servlet>
+  <servlet-mapping>
+      <servlet-name>SignInRouter</servlet-name>
+      <url-pattern>/signin.html</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

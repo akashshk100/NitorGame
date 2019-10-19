@@ -119,7 +119,7 @@ input {
     <input type="text" name="gname" class="register-input" placeholder="Game Name">
     <input type="password" name="password" class="register-input" placeholder="Password">
     <input type="submit" value="Create Account" class="register-button">
-    <a href="signin.jsp"><p style="text-align:center">Already a player</p></a>
+    <a href="signin.html"><p style="text-align:center">Already a player</p></a>
   </form>
 </body>
 </html>

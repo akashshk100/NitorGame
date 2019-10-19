@@ -104,7 +104,7 @@ input {
   <form class="register" action="signin.html" method="post">
     <input type="text" name="gname" class="register-input" placeholder="Game Name">
     <input type="password" name="password" class="register-input" placeholder="Password">
-    <input type="submit" value="Play" class="register-button">
+    <input type="submit" value="Play" name="play" class="register-button">
     <%
     try{
     if(session.getAttribute("err_msg")!=null){
