@@ -159,7 +159,7 @@ input {
   <form class="register" action="verifyAns.html" method="post">
   	<div class="white-space-pre"><%=que %></div>
     <input type="text" name="ans" class="register-input" placeholder="Your Answer">
-    <input type="submit" value="Submit" class="register-button">
+    <input type="submit" value="Submit" name="submit" class="register-button">
   </form>
   <%}%>
 </body>

@@ -128,7 +128,7 @@ input {
   	<div class="white-space-pre"><%=inst3 %></div><br>
   	<div class="white-space-pre"><%=inst4 %></div><br>
   	<div class="white-space-pre"><%=inst5 %></div><br><br>
-    <a href="gamepage.jsp"><input type="button" value="Continue" class="register-button"></a>
+    <a href="gamepage.jsp"><input type="button" name="continue" value="Continue" class="register-button"></a>
   </form>
 </body>
 </html>

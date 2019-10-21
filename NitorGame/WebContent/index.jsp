@@ -114,12 +114,12 @@ input {
 </head>
 <body>
   <h1 class="register-title">CodeNinja</h1>
-  <form class="register" action="signup.html" method="post">
+  <form class="register" action="signup.html" name="register-form" method="post">
     <input type="text" name="name" class="register-input" placeholder="Name">
     <input type="text" name="gname" class="register-input" placeholder="Game Name">
     <input type="password" name="password" class="register-input" placeholder="Password">
-    <input type="submit" value="Create Account" class="register-button">
-    <a href="signin.html"><p style="text-align:center">Already a player</p></a>
+    <input type="submit" value="Create Account" name="submit" class="register-button">
+    <a href="signin.jsp"><p style="text-align:center" name="SignInLink">Already a player</p></a>
   </form>
 </body>
 </html>
